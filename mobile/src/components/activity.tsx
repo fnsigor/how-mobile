@@ -18,15 +18,24 @@ type Props = {
 export function Activity({ data }: Props) {
   return (
     <View
+      testID="activity-container"
       className={clsx(
         "w-full bg-zinc-900 px-4 py-3 rounded-lg flex-row items-center border border-zinc-800 gap-3",
         { "opacity-50": data.isBefore }
       )}
     >
       {data.isBefore ? (
-        <CircleCheck color={colors.lime[300]} size={20} />
+        <CircleCheck
+          testID="circle-check-icon"
+          color={colors.lime[300]}
+          size={20}
+        />
       ) : (
-        <CircleDashed color={colors.zinc[400]} size={20} />
+        <CircleDashed
+          testID="circle-dashed-icon"
+          color={colors.zinc[400]}
+          size={20}
+        />
       )}
 
       <Text className="text-zinc-100 font-regular text-base flex-1">
@@ -35,5 +44,5 @@ export function Activity({ data }: Props) {
 
       <Text className="text-zinc-400 font-regular text-sm">{data.hour}</Text>
     </View>
-  )
+  );
 }
